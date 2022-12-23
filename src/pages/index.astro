@@ -1,15 +1,34 @@
 ---
+import ThemeToggleButton from "../components/ThemeToggleButton.svelte";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>My Blog</title>
-	</head>
-	<body>
-		<h1>My Blog</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>My Blog</title>
+    <style is:global>
+      * {
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-slate-800 dark:text-white">
+    <header class="m-4">
+      <nav class="flex">
+        <h1 class="text-4xl">My Blog</h1>
+        <div class="self-end">
+          <ThemeToggleButton client:only />
+        </div>
+      </nav>
+    </header>
+
+    <section>Here goes my content</section>
+    <img src="/lightThemeIcon.svg" alt="light mode" />
+  </body>
 </html>
