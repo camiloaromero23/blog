@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import type { BaseLayoutProps as Props } from "./BaseLayout.interface";
 import { Routes } from "../enums";
+import BaseHead from "../components/BaseHead.astro";
 
 const {
   current = Routes.HOME,
@@ -14,12 +15,7 @@ const {
 <!-- TODO: Check what is the best approach --><!-- <html lang="en"> -->
 <html lang="en" class="dark">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{title}</title>
+    <BaseHead title={title} description={description} />
     <style>
       * {
         box-sizing: border-box;
@@ -32,7 +28,6 @@ const {
       }
       body {
         @apply dark:bg-blog_blue-500 dark:text-white bg-white justify-center;
-        /* @apply dark:bg-blog_blue-500 dark:text-white bg-white xs:flex justify-center; */
       }
       main {
         @apply relative my-0 mx-auto py-4 px-8 box-border w-full flex flex-col flex-1;

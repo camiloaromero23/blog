@@ -3,8 +3,13 @@ import { Routes } from "../enums";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { BaseLayoutProps } from "../layouts/BaseLayout.interface";
 
+const title = "My Blog";
+const description = "Camilo's Blog";
+
 const baseLayoutValues: BaseLayoutProps = {
   current: Routes.HOME,
+  title,
+  description,
 };
 ---
 
