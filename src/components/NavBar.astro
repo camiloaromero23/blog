@@ -20,13 +20,13 @@ const { current = Routes.HOME } = Astro.props;
 </style>
 
 <nav>
-  <a class={current === Routes.HOME ? "selected" : ""} href={Routes.HOME}>
+  <a class={current === Routes.HOME ? "selected" : ""} href="/">
     home
   </a>
-  <a class={current === Routes.ABOUT ? "selected" : ""} href={Routes.ABOUT}>
+  <a class={current === Routes.ABOUT ? "selected" : ""} href="about">
     about
   </a>
-  <a class={current === Routes.BLOG ? "selected" : ""} href={Routes.BLOG}>
+  <a class={current === Routes.BLOG ? "selected" : ""} href="blog">
     blog
   </a>
   <!-- <div class="ml-8 w-16 xs:w-12 sm:pl-8"> -->
