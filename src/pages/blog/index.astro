@@ -1,0 +1,14 @@
+---
+import { Routes } from "../../enums";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { BaseLayoutProps } from "../../layouts/BaseLayout.interface";
+
+const baseLayoutValues: BaseLayoutProps = {
+  current: Routes.BLOG,
+  title: "Blog"
+};
+---
+
+<BaseLayout {...baseLayoutValues}>
+  <h1 class="text-4xl">Posts</h1>
+</BaseLayout>

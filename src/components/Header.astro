@@ -1,0 +1,15 @@
+---
+import { Routes } from "../enums";
+import Logo from "./Logo.astro";
+import NavBar from "./NavBar.astro";
+
+interface Props {
+  current: Routes;
+}
+const { current = Routes.HOME } = Astro.props;
+---
+
+<header class="flex items-center sm:items-stretch py-4">
+  <Logo />
+  <NavBar current={current} />
+</header>

@@ -4,10 +4,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import type { BaseLayoutProps } from "../layouts/BaseLayout.interface";
 
 const baseLayoutValues: BaseLayoutProps = {
-  current: Routes.HOME,
+  current: Routes.ABOUT,
+  title: 'About Me'
 };
 ---
 
 <BaseLayout {...baseLayoutValues}>
-  <section>Here goes my content</section>
+  <section><h1 class="text-4xl">About Me</h1></section>
 </BaseLayout>
