@@ -1,0 +1,41 @@
+---
+import { Routes } from "../../enums";
+import NavBarRoute from "./NavBarRoute.astro";
+import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton.svelte";
+
+interface Props {
+  current: Routes;
+}
+const { current = Routes.HOME } = Astro.props;
+
+const navigationRoutes = [
+  {
+    activeRoute: current === Routes.HOME,
+    href: "/",
+    name: "home",
+  },
+  {
+    activeRoute: current === Routes.ABOUT,
+    href: "/about",
+    name: "about",
+  },
+  {
+    activeRoute: current === Routes.BLOG,
+    href: "/blog",
+    name: "blog",
+  },
+];
+---
+
+<style>
+  nav {
+    @apply flex items-center flex-1 font-bold justify-center xs:pr-12 sm:pr-0 xs:justify-end sm:justify-end uppercase font-sans;
+  }
+</style>
+
+<nav>
+  {navigationRoutes.map((route) => <NavBarRoute {...route} />)}
+  <div class="ml-8 sm:w-16 sm:mx-0 sm:pl-8">
+    <ThemeToggleButton client:only />
+  </div>
+</nav>
