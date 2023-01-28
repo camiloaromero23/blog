@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import { Routes } from "../../enums";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { BaseLayoutProps } from "../../layouts/BaseLayout.interface";
+
+export const getStaticPaths = async () => {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+};
+
+const { entry } = Astro.props;
+const baseLayoutValues: BaseLayoutProps = {
+  current: Routes.BLOG,
+  title: "About Me",
+};
+const { Content } = await entry.render();
+---
+
+<BaseLayout {...baseLayoutValues}>
+  <h1 class="text-4xl mb-8">{entry.data.title}</h1>
+  <Content />
+</BaseLayout>
