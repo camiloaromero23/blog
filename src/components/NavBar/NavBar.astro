@@ -1,7 +1,7 @@
 ---
-import { Routes } from "../../enums";
-import NavBarRoute from "./NavBarRoute.astro";
-import ThemeToggleButton from "../ThemeToggleButton/ThemeToggleButton.svelte";
+import { Routes } from '../../enums';
+import NavBarRoute from './NavBarRoute.astro';
+import ThemeToggleButton from '../ThemeToggleButton/ThemeToggleButton.svelte';
 
 interface Props {
   current: Routes;
@@ -11,31 +11,31 @@ const { current = Routes.HOME } = Astro.props;
 const navigationRoutes = [
   {
     activeRoute: current === Routes.HOME,
-    href: "/",
-    name: "home",
+    href: '/',
+    name: 'home',
   },
   {
     activeRoute: current === Routes.ABOUT,
-    href: "/about",
-    name: "about",
+    href: '/about',
+    name: 'about',
   },
   {
     activeRoute: current === Routes.BLOG,
-    href: "/blog",
-    name: "blog",
+    href: '/blog',
+    name: 'blog',
   },
 ];
 ---
 
 <style>
   nav {
-    @apply flex items-center flex-1 font-bold justify-center xs:pr-12 sm:pr-0 xs:justify-end sm:justify-end uppercase font-sans;
+    @apply flex flex-1 items-center justify-center font-sans font-bold uppercase xs:justify-end xs:pr-12 sm:justify-end sm:pr-0;
   }
 </style>
 
 <nav>
   {navigationRoutes.map((route) => <NavBarRoute {...route} />)}
-  <div class="ml-8 sm:w-16 sm:mx-0 sm:pl-8">
+  <div class="ml-8 sm:mx-0 sm:w-16 sm:pl-8">
     <ThemeToggleButton client:only />
   </div>
 </nav>

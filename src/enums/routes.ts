@@ -1,5 +1,5 @@
 export const enum Routes {
-  HOME = "",
-  ABOUT = "about",
-  BLOG = "blog",
+  HOME = '',
+  ABOUT = 'about',
+  BLOG = 'blog',
 }

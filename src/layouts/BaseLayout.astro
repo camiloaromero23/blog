@@ -1,13 +1,13 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import type { BaseLayoutProps as Props } from "./BaseLayout.interface";
-import { Routes } from "../enums";
-import BaseHead from "../components/BaseHead.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { BaseLayoutProps as Props } from './BaseLayout.interface';
+import { Routes } from '../enums';
+import BaseHead from '../components/BaseHead.astro';
 
 const {
   current = Routes.HOME,
-  title = "My Blog",
+  title = 'My Blog',
   description = "Camilo's Blog",
 } = Astro.props;
 ---
@@ -19,25 +19,25 @@ const {
     <style>
       * {
         box-sizing: border-box;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
           sans-serif;
       }
       html {
-        @apply w-screen h-screen;
+        @apply h-screen w-screen;
       }
       body {
-        @apply dark:bg-blog_blue-500 dark:text-white bg-white justify-center;
+        @apply justify-center bg-white dark:bg-blog_blue-500 dark:text-white;
       }
       main {
-        @apply relative my-0 mx-auto py-4 px-8 box-border w-full flex flex-col flex-1;
+        @apply relative my-0 mx-auto box-border flex w-full flex-1 flex-col py-4 px-8;
       }
     </style>
   </head>
 
   <body>
     <div class="flex justify-center">
-      <div class="flex flex-col min-h-screen w-full sm:w-2/3">
+      <div class="flex min-h-screen w-full flex-col sm:w-2/3">
         <Header current={current} />
         <main>
           <slot />

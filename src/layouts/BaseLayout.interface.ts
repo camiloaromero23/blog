@@ -1,4 +1,4 @@
-import type { Routes } from "../enums";
+import type { Routes } from '../enums';
 
 export interface BaseLayoutProps {
   current?: Routes;

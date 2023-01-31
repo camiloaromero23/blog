@@ -1,4 +1,4 @@
 export const enum SupportedThemes {
-  LIGHT = "light",
-  DARK = "dark",
+  LIGHT = 'light',
+  DARK = 'dark',
 }

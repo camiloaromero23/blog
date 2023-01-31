@@ -10,19 +10,19 @@ const { activeRoute, href, name } = Astro.props;
 
 <style>
   a {
-    @apply py-3 px-1.5 block relative xs:ml-5 xs:min-w-[4.5rem] text-center;
+    @apply relative block py-3 px-1.5 text-center xs:ml-5 xs:min-w-[4.5rem];
     @apply [&:not(.selected)]:opacity-70;
   }
 
   .selected {
-    @apply underline underline-offset-4 decoration-blog_blue-light-200 dark:decoration-blog_blue-100 decoration-[3px];
+    @apply underline decoration-blog_blue-light-200 decoration-[3px] underline-offset-4 dark:decoration-blog_blue-100;
   }
 </style>
 
 <a
   class={activeRoute
-    ? "selected underline underline-offset-4 decoration-blog_blue-light-200 dark:decoration-blog_blue-100 decoration-[3px]"
-    : ""}
+    ? 'selected underline underline-offset-4 decoration-blog_blue-light-200 dark:decoration-blog_blue-100 decoration-[3px]'
+    : ''}
   href={href}
 >
   {name}

@@ -1,11 +1,11 @@
 ---
-import { getCollection } from "astro:content";
-import { Routes } from "../../enums";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import type { BaseLayoutProps } from "../../layouts/BaseLayout.interface";
+import { getCollection } from 'astro:content';
+import { Routes } from '../../enums';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { BaseLayoutProps } from '../../layouts/BaseLayout.interface';
 
 export const getStaticPaths = async () => {
-  const blogEntries = await getCollection("blog");
+  const blogEntries = await getCollection('blog');
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -15,12 +15,12 @@ export const getStaticPaths = async () => {
 const { entry } = Astro.props;
 const baseLayoutValues: BaseLayoutProps = {
   current: Routes.BLOG,
-  title: "About Me",
+  title: 'About Me',
 };
 const { Content } = await entry.render();
 ---
 
 <BaseLayout {...baseLayoutValues}>
-  <h1 class="text-4xl mb-8">{entry.data.title}</h1>
+  <h1 class="mb-8 text-4xl">{entry.data.title}</h1>
   <Content />
 </BaseLayout>

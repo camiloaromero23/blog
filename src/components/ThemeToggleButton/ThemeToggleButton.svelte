@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { SupportedThemes } from "../../enums";
-  import { iconThemes } from "./iconThemes";
+  import { SupportedThemes } from '../../enums';
+  import { iconThemes } from './iconThemes';
 
   let theme: SupportedThemes;
 
   theme =
-    (localStorage.getItem("theme") as SupportedThemes) ?? SupportedThemes.DARK;
+    (localStorage.getItem('theme') as SupportedThemes) ?? SupportedThemes.DARK;
 
   const handleClick = () => {
     theme =
@@ -20,12 +20,12 @@
     } else {
       document.documentElement.classList.remove(SupportedThemes.DARK);
     }
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
   }
 </script>
 
 <button
-  class="p-1 hover:bg-gray-400 active:bg-gray-500 rounded-full w-min h-min"
+  class="h-min w-min rounded-full p-1 hover:bg-gray-400 active:bg-gray-500"
   on:click={handleClick}
   aria-label="Toggle Light/Dark Mode"
 >

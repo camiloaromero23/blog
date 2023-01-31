@@ -1,7 +1,7 @@
 ---
-import { Routes } from "../enums";
-import Logo from "./Logo.astro";
-import NavBar from "./NavBar/NavBar.astro";
+import { Routes } from '../enums';
+import Logo from './Logo.astro';
+import NavBar from './NavBar/NavBar.astro';
 
 interface Props {
   current: Routes;
@@ -9,7 +9,7 @@ interface Props {
 const { current = Routes.HOME } = Astro.props;
 ---
 
-<header class="flex items-center sm:items-stretch py-4">
+<header class="flex items-center py-4 sm:items-stretch">
   <Logo />
   <NavBar current={current} />
 </header>
